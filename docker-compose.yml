@@ -1,13 +1,13 @@
 version: "3.1"
 
 services:
-  adonisboilerplate_db:
+  plutus_db:
     image: postgres
-    container_name: adonisboilerplate
+    container_name: plutus
     environment:
-      POSTGRES_USER: adonisboilerplate
-      POSTGRES_PASSWORD: adonisboilerplate
-      POSTGRES_DB: adonisboilerplate
+      POSTGRES_USER: plutus
+      POSTGRES_PASSWORD: plutus
+      POSTGRES_DB: plutus
     ports:
       - 5432:5432
     deploy:
