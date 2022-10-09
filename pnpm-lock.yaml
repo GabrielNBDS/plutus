@@ -8,11 +8,13 @@ specifiers:
   '@adonisjs/session': ^6.4.0
   '@adonisjs/shield': ^7.0.11
   '@adonisjs/view': ^6.1.6
+  '@iconify-json/heroicons': ^1.1.5
   '@japa/preset-adonis': ^1.1.0
   '@japa/runner': ^2.0.9
   '@symfony/webpack-encore': ^3.0.0
   adonis-preset-ts: ^2.1.0
   alpinejs: ^3.10.3
+  edge-iconify: ^1.0.1
   eslint: ^8.19.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-adonis: ^2.1.0
@@ -38,7 +40,9 @@ dependencies:
   '@adonisjs/session': 6.4.0_@adonisjs+core@5.8.4
   '@adonisjs/shield': 7.0.11_g7uuaewbgeyysdfrv3psk3cavu
   '@adonisjs/view': 6.1.6_@adonisjs+core@5.8.4
+  '@iconify-json/heroicons': 1.1.5
   alpinejs: 3.10.3
+  edge-iconify: 1.0.1
   htmx.org: 1.8.0
   luxon: 3.0.1
   pg: 8.7.3
@@ -1630,6 +1634,20 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@iconify-json/heroicons/1.1.5:
+    resolution: {integrity: sha512-Ub85+YeuxEwUxfGUi2DoMJrxxqSdmdrI51turvSWTQ7jBqBfMNvQmywx7YhCu8KzoWVO3fULkU5uTVn48ALfeA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify/iconify/2.2.1:
+    resolution: {integrity: sha512-WJzw+3iicrF/tbjbxxRinSgy5FHdJoz/egTqwi3xCDkNRJPq482RX1iyaWrjNuY2vMNSPkQMuqHvZDXgA+WnwQ==}
+    dev: false
+
+  /@iconify/types/2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: false
 
   /@japa/api-client/1.4.0:
     resolution: {integrity: sha512-mew8VddNnh8hmBrQLE2XTFPdiZm2eS/Vai8IYvpzg2nArD2inEuTDBDN1rvv5g+O6zTorL8f3YVfNpstIL1cJw==}
@@ -4046,6 +4064,13 @@ packages:
 
   /edge-error/2.0.8:
     resolution: {integrity: sha512-ORKH7rn/LEfgo0qrgoMMwFPfestNFvTO+dRLDmS+zgulhd9BVXfv/p+V6K3OyEeu2L0ysYp/71uHB31GIDe68A==}
+    dev: false
+
+  /edge-iconify/1.0.1:
+    resolution: {integrity: sha512-I3MlFsXj7A+1WqhT83HH0xuzU3uoN+0zi+FN9UZn//Iba4Hxlk3b5eA3zbkqk/K+xYOq2Ufeq8CHmYv70dH0Ng==}
+    dependencies:
+      '@iconify/iconify': 2.2.1
+      stringify-attributes: 2.0.0
     dev: false
 
   /edge-lexer/4.0.10:
