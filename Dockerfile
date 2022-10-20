@@ -19,6 +19,7 @@ RUN node ace build --production
 FROM base AS production
 ENV NODE_ENV=production
 ENV PORT=$PORT
+ENV APP_URL=$APP_URL
 ENV HOST=0.0.0.0
 COPY --chown=node:node ./package*.json ./
 RUN yarn install --frozen-lockfile
