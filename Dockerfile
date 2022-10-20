@@ -21,7 +21,6 @@ ENV NODE_ENV=production
 ENV PORT=$PORT
 ENV HOST=0.0.0.0
 COPY --chown=node:node ./package.json ./
-COPY --chown=node:node ./pnpm-lock.yml ./
 RUN pnpm install --frozen-lockfile
 COPY --chown=node:node --from=build /home/node/app/build .
 EXPOSE $PORT
