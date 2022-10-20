@@ -9,7 +9,6 @@ RUN mkdir tmp
 
 FROM base AS dependencies
 COPY --chown=node:node ./package.json ./
-COPY --chown=node:node ./yarn.lock ./
 COPY --chown=node:node . .
 
 FROM dependencies AS build
