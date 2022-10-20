@@ -1,0 +1,26 @@
+<div class="relative" x-data>
+  @if(label)
+    @!form.label({ label, name})
+  @end
+
+  <input
+    id="{{ name }}"
+    type="{{ type || 'text' }}"
+    value="{{ value || flashMessages.get(name) || '' }}"
+    class="input{{ icon ? ' pr-12' : '' }}"
+    spellcheck="{{ spellcheck || 'false' }}"
+    {{ $props.serializeExcept(['label', 'icon', 'hideError', 'spellcheck']) }}
+  />
+
+  @if(icon)
+    <span class="absolute text-neutral-500 -translate-y-1/2 pointer-events-none top-1/2 right-4">
+      @svg(icon, { class: 'w-5 h-5 ' })
+    </span>
+  @end
+
+  @if(!hideError)
+    @!form.error({ field: name })
+  @end
+</div>
+
+

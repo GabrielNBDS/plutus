@@ -1,0 +1,26 @@
+@set('label', type === 'income' ? 'Entrada' : 'Saída')
+@set('iconColor', type === 'income' ? 'text-green-600' : 'text-red-600')
+@set('bgColor', type === 'income' ? 'peer-checked:bg-green-200' : 'peer-checked:bg-red-200')
+@set('borderColor', type === 'income' ? 'peer-checked:border-green-200' : 'peer-checked:border-red-200')
+
+<div class="flex w-full">
+  <input
+    name="type"
+    type="radio"
+    id="{{ type }}"
+    value="{{ type }}"
+    class="hidden peer"
+    @if(flashMessages.get('type') === type)
+      checked
+    @end
+  />
+  <label for="{{ type }}" class="flex items-center justify-center gap-2 w-full px-4 py-3 md:py-4 border-2 border-neutral-300 rounded-lg cursor-pointer {{ borderColor }} {{ bgColor }}">
+    <i class="{{ iconColor }} text-2xl">
+      @svg('heroicons:arrow-up-circle')
+    </i>
+
+    <p class="text-sm">
+      {{ label }}
+    </p>
+  </label>
+</div>

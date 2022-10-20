@@ -1,0 +1,13 @@
+<div x-data="{ showAlert: false }">
+  <div
+    x-cloak
+    x-transition.duration.200ms
+    x-show="showAlert"
+    x-init="setTimeout(() => showAlert = true, 50);setTimeout(() => showAlert = false, 5000)"
+    role="alert"
+    class="min-w-[220px] p-4 text-amber-700 rounded-sm bg-amber-50"
+  >
+    <span class="absolute inset-x-0 top-0 h-1 bg-amber-700 animate-life"></span>
+    <h3 class="text-sm font-medium">{{ message }}</h3>
+  </div>
+</div>

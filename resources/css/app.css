@@ -1,2 +1,60 @@
 @import "./tailwind.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+  @apply antialiased
+}
+
+a {
+  @apply cursor-pointer
+}
+
+.input {
+  @apply
+    p-3
+    pr-12
+    w-full
+    text-sm
+    shadow-sm
+    rounded-md
+    text-neutral-400
+    bg-neutral-50
+    border-neutral-50
+
+    !ring-orange-400
+    ring-offset-orange-400
+    focus:border-orange-400
+}
+
+.btn {
+  @apply
+    inline-block
+    rounded
+    border
+    border-orange-400
+    px-12
+    py-3
+    text-sm
+    font-medium
+    bg-orange-400
+    text-white
+    focus:outline-none
+    !ring-orange-400
+    focus:ring
+    hover:bg-orange-500
+    active:bg-orange-600
+}
+
+.btn.btn-sm {
+  @apply px-4 py-2
+}
+
+.btn.btn-secondary {
+  @apply
+    border-gray-50
+    bg-gray-50
+    text-gray-600
+    !ring-gray-50
+    hover:bg-gray-100
+    active:bg-gray-200
+}

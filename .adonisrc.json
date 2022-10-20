@@ -16,7 +16,8 @@
   "preloads": [
     "./start/routes",
     "./start/kernel",
-    "./start/Icons"
+    "./start/Icons",
+    "./start/loaders"
   ],
   "providers": [
     "./providers/AppProvider",
@@ -24,7 +25,9 @@
     "@adonisjs/session",
     "@adonisjs/view",
     "@adonisjs/shield",
-    "@adonisjs/lucid"
+    "@adonisjs/lucid",
+    "@adonisjs/auth",
+    "@adonisjs/ally"
   ],
   "metaFiles": [
     {

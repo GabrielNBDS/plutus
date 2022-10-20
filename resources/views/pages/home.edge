@@ -1,0 +1,23 @@
+@layout('layouts/main')
+@set('title', 'Plutus')
+
+@section('body')
+  <div class="h-[70vh] w-screen bg-indigo-600 flex flex-col items-center justify-end p-4 pb-0">
+    <div class="flex flex-col items-center mb-10">
+      <img src="/logo.svg" />
+      <h1 class="text-neutral-50">Plutus</h1>
+    </div>
+
+    <h2 class="text-neutral-50 font-medium text-3xl text-center">Controle suas finanças de forma muito simples</h2>
+
+    <p class="text-neutral-50 text-center max-w-[190px] mt-20 mb-16">Faça seu login com uma das contas abaixo</p>
+    <a href="/google/redirect" class="flex items-center justify-center gap-4 w-80 h-14 mx-auto -mb-7 bg-white text-neutral-800 text-sm font-medium rounded-md shadow-md">
+      <i class="text-2xl">
+        @svg('icon-park-outline:google')
+      </i>
+      Entrar com Google
+    </a>
+  </div>
+  <div class="h-[30vh] w-screen bg-orange-400">
+  </div>
+@end

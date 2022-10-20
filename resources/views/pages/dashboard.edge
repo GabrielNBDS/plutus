@@ -1,0 +1,15 @@
+@layout('layouts/main')
+@set('title', 'Dashboard | Plutus')
+@set('transactions', await loadTransactions(auth.user.id))
+
+@section('body')
+  <div class="pb-[58px]">
+    @include('partials/header')
+
+    @include('partials/digest')
+
+    @include('partials/listTransactions')
+  </div>
+
+  @!nav({ activeHref: '/dashboard' })
+@end

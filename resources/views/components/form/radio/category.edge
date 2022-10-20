@@ -1,0 +1,21 @@
+<div class="flex w-full">
+  <input
+    type="radio"
+    id="{{ id }}"
+    name="category"
+    value="{{ id }}"
+    class="hidden peer"
+    @if(flashMessages.get('category') == id)
+      checked
+    @end
+  />
+  <label for="{{ id }}" class="flex flex-col text-center items-center justify-center gap-2 w-full px-4 py-3 md:py-4 border-2 border-neutral-300 rounded-lg cursor-pointer peer-checked:border-orange-200 peer-checked:bg-orange-200">
+    <i class="text-orange-600 text-4xl">
+      @svg(icon)
+    </i>
+
+    <p class="text-xs">
+      {{ label }}
+    </p>
+  </label>
+</div>

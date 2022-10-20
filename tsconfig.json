@@ -1,5 +1,6 @@
 {
   "extends": "adonis-preset-ts/tsconfig.json",
+
   "include": [
     "**/*"
   ],
@@ -8,6 +9,9 @@
     "build"
   ],
   "compilerOptions": {
+    "lib": [
+      "esnext"
+    ],
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
@@ -32,7 +36,9 @@
       "@adonisjs/view",
       "@adonisjs/shield",
       "@japa/preset-adonis/build/adonis-typings",
-      "@adonisjs/lucid"
+      "@adonisjs/lucid",
+      "@adonisjs/auth",
+      "@adonisjs/ally"
     ]
   }
 }

@@ -1,0 +1,5 @@
+@if(flashMessages.has(`errors.${field}`))
+  <p class="text-red-500 text-sm mt-1" role="alert">
+    {{ flashMessages.get(`errors.${field}`) }}
+  </p>
+@end

@@ -1,0 +1,28 @@
+@if(label)
+  @!form.label({ label, name})
+@end
+
+<div class="relative">
+  <select
+    id="{{ name }}"
+    name="{{ name }}"
+    value="{{ value || flashMessages.get(name) || '' }}"
+    class="input"
+  >
+    @if(!placeholder)
+      <option>{{ placeholder }}</option>
+    @end
+
+    {{{ await $slots.main() }}}
+  </select>
+
+  @if(icon)
+    <span class="absolute text-neutral-500 -translate-y-1/2 pointer-events-none top-1/2 right-4">
+      @svg(icon, { class: 'w-5 h-5 ' })
+    </span>
+  @end
+</div>
+
+@if(!hideError)
+  @!form.error({ field: name })
+@end

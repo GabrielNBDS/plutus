@@ -1,0 +1,57 @@
+@if(transactions.transactions.length > 0)
+  <div class="flex flex-col gap-4 p-4 max-w-screen-lg mx-auto px-4 lg:px-0">
+    <p class="text-neutral-800 text-lg">Listagem</p>
+
+    <ul class="flex flex-col gap-4">
+      @each(transaction in transactions.transactions)
+        <li class="p-4 bg-neutral-50 rounded-lg">
+          <div class="flex justify-between">
+            <div>
+              <p class="text-neutral-800 text-sm">{{ transaction.name }}</p>
+              <p class="{{ transaction.type === 'income' ? 'text-green-600' : 'text-red-500' }} text-xl mb-6">{{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format((transaction.value / 100) * (transaction.type === 'income' ? 1 : -1)) }}</p>
+            </div>
+
+            @component('components/modal')
+              @slot('button')
+                <button class="max-h-[20px]" @click="showModal = !showModal">
+                  <i class="text-xl text-neutral-400">
+                    @svg('heroicons:trash')
+                  </i>
+                </button>
+              @end
+
+              <div class="p-8 bg-white rounded shadow-2xl mt-[20%]">
+                <h2 class="text-lg font-medium">Quer mesmo deletar "{{ transaction.name }}"?</h2>
+
+                <p class="mt-2 text-sm text-gray-500">
+                  Essa ação não pode ser desfeita.
+                </p>
+
+                <div class="flex items-center justify-end mt-8 text-xs">
+                  <form action="{{ route('TransactionsController.delete', [transaction.id], { qs: { _method: 'DELETE' } }) }}" method="POST">
+                    {{ csrfField() }}
+                    <button type="submit" class="btn btn-sm">Sim, tenho certeza</button>
+                  </form>
+
+                  <button @click="showModal = false" type="button" class="btn btn-sm btn-secondary ml-2">Não</button>
+                </div>
+              </div>
+            @end
+          </div>
+
+          <div class="text-neutral-400 flex justify-between">
+            <div class="flex gap-2">
+              <i class="text-xl">
+                @svg(transaction.category.icon)
+              </i>
+
+              <p class="text-sm">{{ transaction.category.name }}</p>
+            </div>
+
+            <p class="text-sm">{{ `${transaction.day}/${transaction.month}/${transaction.year}` }}</p>
+          </div>
+        </li>
+      @end
+    </ul>
+  </div>
+@end

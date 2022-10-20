@@ -8,7 +8,28 @@
   @entryPointStyles('app')
   @entryPointScripts('app')
 </head>
-<body>
+<body class="bg-[#F0F2F5] scrollbar">
   @!section('body')
+
+  <div id="toasts" class="fixed top-5 right-5 flex flex-col gap-2">
+    @if(flashMessages.has('errors'))
+      @!toast.error({ message: "Revise os campos do formulário." })
+    @end
+
+    @each(toast in flashMessages.get("toast"))
+      @if(toast.type === "success")
+        @!toast.success({ message: toast.message })
+      @end
+      @if(toast.type === "error")
+        @!toast.error({ message: toast.message })
+      @end
+      @if(toast.type === "warning")
+        @!toast.warning({ message: toast.message })
+      @end
+      @if(toast.type === "info")
+        @!toast.info({ message: toast.message })
+      @end
+    @end
+  </div>
 </body>
 </html>
