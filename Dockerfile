@@ -9,8 +9,7 @@ RUN mkdir tmp
 
 FROM base AS dependencies
 COPY --chown=node:node ./package.json ./
-COPY --chown=node:node ./pnpm-lock.yml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 COPY --chown=node:node . .
 
 FROM dependencies AS build
@@ -21,7 +20,7 @@ ENV NODE_ENV=production
 ENV PORT=$PORT
 ENV HOST=0.0.0.0
 COPY --chown=node:node ./package.json ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 COPY --chown=node:node --from=build /home/node/app/build .
 EXPOSE $PORT
 CMD [ "dumb-init", "node", "server.js" ]
