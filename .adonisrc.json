@@ -16,7 +16,7 @@
   "preloads": [
     "./start/routes",
     "./start/kernel",
-    "./start/Icons",
+    "./start/icons",
     "./start/loaders"
   ],
   "providers": [
