@@ -9,6 +9,8 @@ RUN mkdir tmp
 
 FROM base AS dependencies
 COPY --chown=node:node ./package.json ./
+COPY --chown=node:node ./yarn.lock ./
+RUN yarn install --frozen-lockfile
 COPY --chown=node:node . .
 
 FROM dependencies AS build
@@ -19,7 +21,7 @@ ENV NODE_ENV=production
 ENV PORT=$PORT
 ENV HOST=0.0.0.0
 COPY --chown=node:node ./package*.json ./
-RUN yarn install --prod
+RUN yarn install --frozen-lockfile
 COPY --chown=node:node --from=build /home/node/app/build .
 EXPOSE $PORT
 CMD [ "dumb-init", "node", "server.js" ]
