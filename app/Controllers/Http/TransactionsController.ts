@@ -55,7 +55,7 @@ export default class TransactionsController {
 
     const transaction = await Transaction.findOrFail(id)
 
-    if (!transaction.userId === user.id) {
+    if (transaction.userId !== user.id) {
       return response.unauthorized()
     }
 
