@@ -8,7 +8,7 @@ export default class CreateTransactionValidator {
     name: schema.string({ trim: true }),
     value: schema.string({ trim: true }),
     date: schema.date({
-      format: 'yyyy-MM-dd',
+      format: 'dd/MM/yyyy',
     }),
     type: schema.enum(['income', 'outcome']),
     category: schema.number([rules.exists({ column: 'id', table: 'categories' })]),
