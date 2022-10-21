@@ -1,5 +1,5 @@
 import Route from '@ioc:Adonis/Core/Route'
-import RenderPage from '../app/Utils/RenderPage'
+import RenderPage from 'App/Utils/RenderPage'
 
 Route.get('/', RenderPage('pages/home'))
 

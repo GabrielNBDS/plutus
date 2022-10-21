@@ -1,6 +1,6 @@
 import View from '@ioc:Adonis/Core/View'
-import Category from '../app/Models/Category'
-import Transaction from '../app/Models/Transaction'
+import Category from 'App/Models/Category'
+import Transaction from 'App/Models/Transaction'
 
 View.global('loadCategories', async function () {
   return await Category.query().orderBy('id', 'asc')

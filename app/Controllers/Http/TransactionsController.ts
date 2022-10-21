@@ -1,7 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Database from '@ioc:Adonis/Lucid/Database'
-import Transaction from '../../Models/Transaction'
-import CreateTransactionValidator from '../../Validators/CreateTransactionValidator'
+import Transaction from 'App/Models/Transaction'
+import CreateTransactionValidator from 'App/Validators/CreateTransactionValidator'
 
 export default class TransactionsController {
   public async store({ auth, request, response, session }: HttpContextContract) {
