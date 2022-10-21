@@ -1,7 +1,13 @@
 import Route from '@ioc:Adonis/Core/Route'
 import RenderPage from 'App/Utils/RenderPage'
 
-Route.get('/', RenderPage('pages/home'))
+Route.get('/', ({ auth, response, view }) => {
+  if (auth.isLoggedIn) {
+    return response.redirect('/dashboard')
+  }
+
+  return view.render('pages/home')
+})
 
 Route.get('/google/redirect', 'AuthController.redirect')
 Route.get('/google/callback', 'AuthController.callback')
