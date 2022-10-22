@@ -28,21 +28,8 @@ export default class TransactionsController {
       .andWhere('month', month)
       .andWhere('user_id', user.id)
 
-    const totalIncome = transactions
-      .filter((item) => item.type === 'income')
-      .map((item) => item.value)
-      .reduce((a, b) => a + b, 0)
-
-    const totalOutcome =
-      transactions
-        .filter((item) => item.type === 'outcome')
-        .map((item) => item.value)
-        .reduce((a, b) => a + b, 0) * -1
-
     const data = {
       transactions,
-      totalIncome,
-      totalOutcome,
       month: ('0' + month).slice(-2),
       year: year,
     }
