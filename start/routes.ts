@@ -13,7 +13,7 @@ Route.get('/google/redirect', 'AuthController.redirect')
 Route.get('/google/callback', 'AuthController.callback')
 Route.post('/logout', 'AuthController.logout')
 
-Route.get('/dashboard', RenderPage('pages/dashboard')).middleware('auth')
+Route.get('/dashboard', 'TransactionsController.index').middleware('auth')
 
 Route.get('/cadastrar', RenderPage('pages/register')).middleware('auth')
 

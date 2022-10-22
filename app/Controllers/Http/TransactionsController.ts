@@ -4,6 +4,52 @@ import Transaction from 'App/Models/Transaction'
 import CreateTransactionValidator from 'App/Validators/CreateTransactionValidator'
 
 export default class TransactionsController {
+  public async index({ auth, view, request }: HttpContextContract) {
+    const user = auth.user!
+
+    const { month: date } = request.qs()
+
+    let year
+    let month
+
+    if (date) {
+      const [requestYear, requestMonth] = date?.split('-')
+      month = requestMonth
+      year = requestYear
+    } else {
+      const today = new Date()
+      month = today.getMonth() + 1
+      year = today.getFullYear()
+    }
+
+    const transactions = await Transaction.query()
+      .preload('category')
+      .where('year', year)
+      .andWhere('month', month)
+      .andWhere('user_id', user.id)
+
+    const totalIncome = transactions
+      .filter((item) => item.type === 'income')
+      .map((item) => item.value)
+      .reduce((a, b) => a + b, 0)
+
+    const totalOutcome =
+      transactions
+        .filter((item) => item.type === 'outcome')
+        .map((item) => item.value)
+        .reduce((a, b) => a + b, 0) * -1
+
+    const data = {
+      transactions,
+      totalIncome,
+      totalOutcome,
+      month: ('0' + month).slice(-2),
+      year: year,
+    }
+
+    return view.render('pages/dashboard', { transactions: data })
+  }
+
   public async store({ auth, request, response, session }: HttpContextContract) {
     const user = auth.user!
     const { name, value, date, type, category } = await request.validate(CreateTransactionValidator)

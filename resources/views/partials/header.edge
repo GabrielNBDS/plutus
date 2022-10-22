@@ -1,19 +1,27 @@
 <header class="h-52 w-full bg-indigo-600 p-4">
-  <div class=" flex justify-between max-w-screen-lg mx-auto">
-    <div class="flex items-center gap-2">
-      <img
-        class="w-12 h-12 rounded-md bg-cover"
-        src="{{ auth.user.avatar }}"
-      />
+  <div class="flex flex-col gap-4 max-w-screen-lg mx-auto">
+    <div class="flex justify-between">
+      <div class="flex items-center gap-2">
+        <img
+          class="w-12 h-12 rounded-md bg-cover"
+          src="{{ auth.user.avatar }}"
+        />
 
-      <p class="text-neutral-50">Olá,<br/><span class="font-medium">{{ auth.user.name.split(' ')[0] }}</span></p>
+        <p class="text-neutral-50">Olá,<br/><span class="font-medium">{{ auth.user.name.split(' ')[0] }}</span></p>
+      </div>
+
+      <form hx-boost="true" action="{{ route('AuthController.logout') }}" method="POST">
+        {{ csrfField() }}
+        <button type="submit" class="text-orange-400 text-2xl max-h-[24px]">
+          @svg('heroicons:arrow-right-on-rectangle')
+        </button>
+      </form>
     </div>
 
-    <form hx-boost="true" action="{{ route('AuthController.logout') }}" method="POST">
-      {{ csrfField() }}
-      <button type="submit" class="text-orange-400 text-2xl max-h-[24px]">
-        @svg('heroicons:arrow-right-on-rectangle')
-      </button>
+    <form action="{{ route('TransactionsController.index') }}" method="GET" hx-boost="true">
+      <input id="month" name="month" type="month" value="{{ transactions.year }}-{{ transactions.month }}" class="input input-sm max-w-max mb-2">
+
+      <button type="submit" class="btn btn-sm">IR</button>
     </form>
   </div>
 </header>

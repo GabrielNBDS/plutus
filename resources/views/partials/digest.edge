@@ -1,5 +1,5 @@
 @if(transactions.transactions.length < 1)
-  <div class="flex flex-col gap-4 md:flex-row -mt-32 max-w-screen-lg mx-auto items-center md:items-start w-full {{ auth.user.total > 0 ? "justify-between" : "justify-center" }}">
+  <div class="flex flex-col gap-4 md:flex-row -mt-20 max-w-screen-lg mx-auto items-center md:items-start w-full {{ auth.user.total > 0 ? "justify-between" : "justify-center" }}">
     @include('partials/dashboardEmptyState')
 
     @if(auth.user.total > 0)
