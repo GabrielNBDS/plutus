@@ -198,7 +198,7 @@
         </template>
         <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
           <div style="width: 14.28%" class="px-1 mb-1">
-            <div @click="getDateValue(date)" x-text="date" class="cursor-pointer text-center text-sm leading-none rounded-full leading-loose transition ease-in-out duration-100" :class="{
+            <div @click="getDateValue(date)" x-text="date" class="cursor-pointer text-center text-sm rounded-full leading-loose transition ease-in-out duration-100" :class="{
                 'bg-orange-200': isToday(date) == true,
                 'text-gray-600 hover:bg-orange-200': isToday(date) == false && isSelectedDate(date) == false,
                 'bg-orange-500 text-white hover:bg-opacity-75': isSelectedDate(date) == true

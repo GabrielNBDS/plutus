@@ -28,9 +28,9 @@
                 </p>
 
                 <div class="flex items-center justify-end mt-8 text-xs">
-                  <form action="{{ route('TransactionsController.delete', [transaction.id], { qs: { _method: 'DELETE' } }) }}" method="POST">
+                  <form x-data hx-boost="true" action="{{ route('TransactionsController.delete', [transaction.id], { qs: { _method: 'DELETE' } }) }}" method="POST">
                     {{ csrfField() }}
-                    <button type="submit" class="btn btn-sm">Sim, tenho certeza</button>
+                    <button @click="document.querySelector('body').classList.remove('overflow-hidden')" type="submit" class="btn btn-sm">Sim, tenho certeza</button>
                   </form>
 
                   <button @click="showModal = false" type="button" class="btn btn-sm btn-secondary ml-2">Não</button>
