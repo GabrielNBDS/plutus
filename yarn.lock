@@ -3131,6 +3131,11 @@ charenc@~0.0.1:
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   integrity sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==
 
+chart.js@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.9.1.tgz#3abf2c775169c4c71217a107163ac708515924b8"
+  integrity sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==
+
 check-error@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
@@ -4952,7 +4957,7 @@ htmlparser2@^6.1.0:
     domutils "^2.5.2"
     entities "^2.0.0"
 
-htmx.org@^1.8.0:
+htmx.org@^1.8.2:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/htmx.org/-/htmx.org-1.8.2.tgz#0417a8ad41cecf5721c8e71875778177a6f7ee3f"
   integrity sha512-jJzX0vaq6UguwI8wN/bGugsmbi8TItptGq6Jmcglf11iWqgjC54Tzqo9ugRzfkU9ZaAInRHAbsbs2fHuxtgRkQ==

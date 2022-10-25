@@ -19,7 +19,7 @@
     </div>
 
     <form action="{{ route('TransactionsController.index') }}" method="GET" hx-boost="true">
-      <input id="month" name="month" type="month" value="{{ transactions.year }}-{{ transactions.month }}" class="input input-sm max-w-max mb-2">
+      <input id="month" name="month" type="month" value="{{ year }}-{{ month }}" class="input input-sm max-w-max mb-2">
 
       <button type="submit" class="btn btn-sm">IR</button>
     </form>

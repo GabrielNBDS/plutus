@@ -1,0 +1,19 @@
+@layout('layouts/main')
+@set('title', 'Resumo | Plutus')
+
+@section('body')
+  <div class="pb-[58px]">
+    @!header({ text: 'Resumo' })
+    <div class="w-full max-w-screen-lg mx-auto p-4 lg:px-0">
+      <form class="max-w-max mx-auto" action="{{ route('TransactionsController.index') }}" method="GET" hx-boost="true">
+        <input id="month" name="month" type="month" value="{{ year }}-{{ month }}" class="input input-sm max-w-max mb-2">
+
+        <button type="submit" class="btn btn-sm">IR</button>
+      </form>
+    </div>
+
+    @!chart({ grouped, difference })
+  </div>
+
+  @!nav({ activeHref: '/resumo' })
+@end

@@ -1,6 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Database from '@ioc:Adonis/Lucid/Database'
 import Transaction from 'App/Models/Transaction'
+import groupBy from 'App/Utils/GroupBy'
 import CreateTransactionValidator from 'App/Validators/CreateTransactionValidator'
 
 export default class TransactionsController {
@@ -9,8 +10,8 @@ export default class TransactionsController {
 
     const { month: date } = request.qs()
 
-    let year
-    let month
+    let year: number
+    let month: number
 
     if (date) {
       const [requestYear, requestMonth] = date?.split('-')
@@ -28,13 +29,80 @@ export default class TransactionsController {
       .andWhere('month', month)
       .andWhere('user_id', user.id)
 
+    const totalIncome = transactions
+      .filter((item) => item.type === 'income')
+      .map((item) => item.value)
+      .reduce((a, b) => a + b, 0)
+
+    const totalOutcome =
+      transactions
+        .filter((item) => item.type === 'outcome')
+        .map((item) => item.value)
+        .reduce((a, b) => a + b, 0) * -1
+
     const data = {
       transactions,
       month: ('0' + month).slice(-2),
       year: year,
+      totalIncome,
+      totalOutcome,
     }
 
-    return view.render('pages/dashboard', { transactions: data })
+    return view.render('pages/dashboard', data)
+  }
+
+  public async resume({ auth, view, request }: HttpContextContract) {
+    const user = auth.user!
+
+    const { month: date } = request.qs()
+
+    let year: number
+    let month: number
+
+    if (date) {
+      const [requestYear, requestMonth] = date?.split('-')
+      month = requestMonth
+      year = requestYear
+    } else {
+      const today = new Date()
+      month = today.getMonth() + 1
+      year = today.getFullYear()
+    }
+
+    const transactions = await Transaction.query()
+      .preload('category')
+      .where('year', year)
+      .andWhere('month', month)
+      .andWhere('user_id', user.id)
+
+    const grouped: { category: string; total: number }[] = []
+    const groupedObj = groupBy(transactions, 'categoryId')
+    for (let key in groupedObj) {
+      grouped.push({
+        category: groupedObj[key][0].category.name,
+        total: groupedObj[key].map((item) => item.value).reduce((a, b) => a + b, 0),
+      })
+    }
+
+    const totalIncome = transactions
+      .filter((item) => item.type === 'income')
+      .map((item) => item.value)
+      .reduce((a, b) => a + b, 0)
+
+    const totalOutcome =
+      transactions
+        .filter((item) => item.type === 'outcome')
+        .map((item) => item.value)
+        .reduce((a, b) => a + b, 0) * -1
+
+    const data = {
+      month: ('0' + month).slice(-2),
+      year: year,
+      grouped: grouped.sort((a, b) => Math.abs(a.total) + Math.abs(b.total)),
+      difference: totalIncome - totalOutcome,
+    }
+
+    return view.render('pages/resume', data)
   }
 
   public async store({ auth, request, response, session }: HttpContextContract) {
@@ -104,10 +172,6 @@ export default class TransactionsController {
       .update({
         total: user.total + formattedValue,
       })
-
-    console.log(transaction.type)
-    console.log(transaction.value)
-    console.log(formattedValue)
 
     try {
       await trx.commit()

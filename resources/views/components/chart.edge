@@ -1,0 +1,58 @@
+<div class="w-64 lg:w-96 mx-auto">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script defer>
+  var colors = new Array(5).fill([
+    '#facc15',
+    '#a3e635',
+    '#22d3ee',
+    '#7c3aed',
+    '#4ade80',
+    '#38bdf8',
+    '#a855f7',
+    '#ea580c',
+    '#10b981',
+    '#3b82f6',
+    '#d946ef',
+    '#2dd4bf',
+    '#6366f1',
+    '#ec4899'
+  ]).flat()
+
+  var { difference, grouped } = JSON.parse('{{ stringify($props) }}'.replaceAll('&quot;', '"'))
+
+  var labels = [
+    'Diferença',
+    ...grouped.map(item => item.category)
+  ];
+
+  var data = {
+    labels: labels,
+    datasets: [{
+      backgroundColor: [(difference > 0 ? '#16a34a' : '#dc2626'), ...colors],
+      data: [difference, ...grouped.map(item => item.total)],
+    }]
+  };
+
+  var config = {
+    type: 'pie',
+    data: data,
+    options: {
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `${context.label} ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed / 100)}`;
+            }
+          }
+        }
+      }
+    }
+  };
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
