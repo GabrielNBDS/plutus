@@ -1,0 +1,25 @@
+@set('colors', new Array(5).fill([
+  '#facc15',
+  '#a3e635',
+  '#22d3ee',
+  '#7c3aed',
+  '#4ade80',
+  '#38bdf8',
+  '#a855f7',
+  '#ea580c',
+  '#10b981',
+  '#3b82f6',
+  '#d946ef',
+  '#2dd4bf',
+  '#6366f1',
+  '#ec4899'
+]).flat())
+
+<ul class="p-4 lg:p-0 max-w-[384px] mt-8 mx-auto flex flex-col gap-4">
+  @each((category, index) in grouped)
+    <li style="border-left-color:{{ colors[index] }}" class="border-x-8 border-r-neutral-50 w-full bg-neutral-50 rounded-lg flex flex-col md:flex-row flex-wrap justify-between items-start md:items-center p-4">
+      <p class="text-left">{{ category.category }}</p>
+      <p class="text-left font-bold">{{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(category.total / 100) }}</p>
+    </li>
+  @endeach
+</ul>

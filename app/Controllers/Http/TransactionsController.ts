@@ -98,7 +98,7 @@ export default class TransactionsController {
     const data = {
       month: ('0' + month).slice(-2),
       year: year,
-      grouped: grouped.sort((a, b) => Math.abs(a.total) + Math.abs(b.total)),
+      grouped: grouped.sort((a, b) => Math.abs(a.total) - Math.abs(b.total)).reverse(),
       difference: totalIncome - totalOutcome,
     }
 
