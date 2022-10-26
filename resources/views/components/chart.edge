@@ -20,7 +20,7 @@
     '#ec4899'
   ]).flat()
 
-  var { difference, grouped } = JSON.parse('{{ stringify($props) }}'.replaceAll('&quot;', '"'))
+  var { difference, grouped } = JSON.parse('{{ safe(stringify($props)) }}')
 
   var labels = [
     'Diferença',

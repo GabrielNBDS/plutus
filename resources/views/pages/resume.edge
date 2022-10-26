@@ -6,15 +6,17 @@
     @!header({ text: 'Resumo' })
 
     @if(grouped.length > 0)
-      <div class="max-w-max mx-auto p-4">
-        @!monthSelector({ year, month, route: route('TransactionsController.resume') })
+      <div class="bg-indigo-600 mb-4">
+        <div class="max-w-max mx-auto p-4">
+          @!monthSelector({ year, month, url: 'TransactionsController.resume' })
+        </div>
       </div>
 
       @!chart({ grouped, difference })
     @else
     <div class="bg-indigo-600">
         <div class="max-w-max mx-auto p-4">
-          @!monthSelector({ year, month, route: route('TransactionsController.resume') })
+          @!monthSelector({ year, month, url: 'TransactionsController.resume' })
         </div>
 
         @include('partials/dashboardEmptyState')

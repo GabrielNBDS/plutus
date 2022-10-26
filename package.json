@@ -69,12 +69,12 @@
     "alpinejs": "^3.10.3",
     "chart.js": "^3.9.1",
     "edge-iconify": "^1.0.1",
-    "htmx.org": "^1.8.2",
     "luxon": "^3.0.1",
     "pg": "^8.7.3",
     "pino-pretty": "^9.1.1",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
-    "source-map-support": "^0.5.21"
+    "source-map-support": "^0.5.21",
+    "turbolinks": "^5.2.0"
   }
 }

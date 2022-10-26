@@ -1,5 +1,24 @@
-<form class="max-w-max m-0" action="{{ route }}" method="GET" hx-boost="true">
+<div class="flex gap-2 items-center">
+  <a href="{{ route(url) }}">
+    <i class="text-xl mb-2 flex text-white">
+      @svg('heroicons:chevron-left-20-solid')
+    </i>
+  </a>
+
   <input id="month" name="month" type="month" value="{{ year }}-{{ month }}" class="input input-sm max-w-max mb-2">
 
-  <button type="submit" class="btn btn-sm">IR</button>
-</form>
+  <a href="{{ route(url) }}">
+    <i class="text-xl mb-2 flex text-white">
+      @svg('heroicons:chevron-right-20-solid')
+    </i>
+  </a>
+</div>
+
+
+<script>
+  var input = document.querySelector('#month')
+
+  input.addEventListener('change', function(e) {
+    Turbolinks.visit(`${window.location.pathname}?month=${e.target.value}`)
+  })
+</script>
