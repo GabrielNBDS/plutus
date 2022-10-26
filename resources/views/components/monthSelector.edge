@@ -1,5 +1,5 @@
 <div class="flex gap-2 items-center">
-  <a href="{{ route(url) }}">
+  <a id="previous">
     <i class="text-xl mb-2 flex text-white">
       @svg('heroicons:chevron-left-20-solid')
     </i>
@@ -7,7 +7,7 @@
 
   <input id="month" name="month" type="month" value="{{ year }}-{{ month }}" class="input input-sm max-w-max mb-2">
 
-  <a href="{{ route(url) }}">
+  <a id="next">
     <i class="text-xl mb-2 flex text-white">
       @svg('heroicons:chevron-right-20-solid')
     </i>
@@ -20,5 +20,16 @@
 
   input.addEventListener('change', function(e) {
     Turbolinks.visit(`${window.location.pathname}?month=${e.target.value}`)
+  })
+
+  var previous = document.querySelector('#previous')
+  var next = document.querySelector('#next')
+
+  previous.addEventListener('click', function() {
+    Turbolinks.visit(`${window.location.pathname}?month=${input.value}&page=previous`)
+  })
+
+  next.addEventListener('click', function() {
+    Turbolinks.visit(`${window.location.pathname}?month=${input.value}&page=next`)
   })
 </script>

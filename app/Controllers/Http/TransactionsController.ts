@@ -8,15 +8,31 @@ export default class TransactionsController {
   public async index({ auth, view, request }: HttpContextContract) {
     const user = auth.user!
 
-    const { month: date } = request.qs()
+    const { month: date, page } = request.qs()
 
     let year: number
     let month: number
 
     if (date) {
       const [requestYear, requestMonth] = date?.split('-')
-      month = requestMonth
-      year = requestYear
+      month = Number(requestMonth)
+      year = Number(requestYear)
+
+      if (page === 'previous') {
+        month -= 1
+        if (month === 0) {
+          month = 12
+          year -= 1
+        }
+      }
+
+      if (page === 'next') {
+        month += 1
+        if (month === 13) {
+          month = 1
+          year += 1
+        }
+      }
     } else {
       const today = new Date()
       month = today.getMonth() + 1
