@@ -1,5 +1,6 @@
 <h1 align="center">
     <img alt="Plutus logo" title="Plutus logo" src=".github/logo.svg" width="90px" />
+    <p align="center">Plutus</p>
 </h1>
 
 <h1 align="center">
