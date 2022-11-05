@@ -214,7 +214,7 @@ export default class TransactionsController {
 
       session.flash('toast', [{ type: 'error', message: 'Ocorreu um erro, tente novamente.' }])
     } finally {
-      response.redirect().back()
+      response.redirect().withQs().back()
     }
   }
 }
