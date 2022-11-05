@@ -26,5 +26,9 @@
     "outcome": "Outcome",
     "category": "Category",
     "register": "Register"
+  },
+  "header": {
+    "register": "Register",
+    "resume": "Resume"
   }
 }

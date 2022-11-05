@@ -26,5 +26,9 @@
     "outcome": "Saída",
     "category": "Categoria",
     "register": "Registrar"
+  },
+  "header": {
+    "register": "Cadastrar",
+    "resume": "Resumo"
   }
 }

@@ -3,7 +3,7 @@
 
 @section('body')
   <div class="pb-[58px]">
-    @!header({ text: 'Cadastro' })
+    @!header({ text: t('messages.header.register') })
 
     <form method="POST" action="{{ route('TransactionsController.store') }}" class="p-4 lg:px-0 max-w-screen-sm mx-auto flex flex-col gap-4">
       {{ csrfField() }}
