@@ -9,5 +9,12 @@
     "list": "List",
     "register": "Register",
     "resume": "Resume"
+  },
+  "lastTransactions": "Last transactions",
+  "deleteModal": {
+    "heading": "Are you sure you want to delete &#34;{ transactionName }&#34;?",
+    "warning": "This action cannot be undone.",
+    "confirm": "Yes, I'm sure",
+    "cancel": "No"
   }
 }

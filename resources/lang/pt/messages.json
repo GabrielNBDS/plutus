@@ -9,5 +9,12 @@
     "list": "Listagem",
     "register": "Cadastrar",
     "resume": "Resumo"
+  },
+  "lastTransactions": "Últimas movimentações",
+  "deleteModal": {
+    "heading": "Quer mesmo deletar &#34;{ transactionName }&#34;?",
+    "warning": "Essa ação não pode ser desfeita.",
+    "confirm": "Sim, tenho certeza",
+    "cancel": "Não"
   }
 }
