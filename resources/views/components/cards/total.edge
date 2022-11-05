@@ -1,5 +1,5 @@
 @set('iconColor', type === 'income' ? 'text-green-600' : type === 'outcome' ? 'text-red-500' : 'text-white')
-@set('label', type === 'income' ? 'Entradas' : type === 'outcome' ? 'Saídas' : 'Total')
+@set('label', type === 'income' ? 'incomes' : type === 'outcome' ? 'outcomes' : 'total')
 @set('icon',
   type === 'income' ? 'heroicons:arrow-up-circle'
   : type === 'outcome' ? 'heroicons:arrow-down-circle'
@@ -8,7 +8,7 @@
 <div class="min-h-[200px] min-w-[300px] w-full p-4 {{ type === 'total' ? 'bg-orange-400' : 'bg-neutral-50' }} rounded-lg">
   <div class="flex justify-between mb-[48px]">
     <p class="{{ type === 'total' ? 'text-white' : 'text-neutral-800' }} text-sm">
-      {{ label }}
+      {{ t(`messages.totalCards.${label}`) }}
     </p>
 
     <i class="{{ iconColor }} text-4xl">

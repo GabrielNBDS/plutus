@@ -1,3 +1,8 @@
 {
-  "greeting": "Olá,"
+  "greeting": "Olá,",
+  "totalCards": {
+    "incomes": "Entradas",
+    "outcomes": "Saídas",
+    "total": "Total"
+  }
 }
