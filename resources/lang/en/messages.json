@@ -16,5 +16,15 @@
     "warning": "This action cannot be undone.",
     "confirm": "Yes, I'm sure",
     "cancel": "No"
+  },
+  "registerLabels": {
+    "name": "Name",
+    "value": "Value",
+    "date": "Date",
+    "type": "Type",
+    "income": "Income",
+    "outcome": "Outcome",
+    "category": "Category",
+    "register": "Register"
   }
 }

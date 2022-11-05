@@ -16,5 +16,15 @@
     "warning": "Essa ação não pode ser desfeita.",
     "confirm": "Sim, tenho certeza",
     "cancel": "Não"
+  },
+  "registerLabels": {
+    "name": "Nome",
+    "value": "Valor",
+    "date": "Data",
+    "type": "Tipo",
+    "income": "Entrada",
+    "outcome": "Saída",
+    "category": "Categoria",
+    "register": "Registrar"
   }
 }

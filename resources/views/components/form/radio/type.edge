@@ -1,4 +1,4 @@
-@set('label', type === 'income' ? 'Entrada' : 'Saída')
+@set('label', type === 'income' ? t("messages.registerLabels.income") : t("messages.registerLabels.outcome"))
 @set('iconColor', type === 'income' ? 'text-green-600' : 'text-red-600')
 @set('bgColor', type === 'income' ? 'peer-checked:bg-green-200' : 'peer-checked:bg-red-200')
 @set('borderColor', type === 'income' ? 'peer-checked:border-green-200' : 'peer-checked:border-red-200')
