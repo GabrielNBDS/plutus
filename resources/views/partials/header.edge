@@ -7,15 +7,19 @@
           src="{{ auth.user.avatar }}"
         />
 
-        <p class="text-neutral-50">Olá,<br/><span class="font-medium">{{ auth.user.name.split(' ')[0] }}</span></p>
+        <p class="text-neutral-50">{{ t('messages.greeting') }}<br/><span class="font-medium">{{ auth.user.name.split(' ')[0] }}</span></p>
       </div>
 
-      <form action="{{ route('AuthController.logout') }}" method="POST">
-        {{ csrfField() }}
-        <button type="submit" class="text-orange-400 text-2xl max-h-[24px]">
-          @svg('heroicons:arrow-right-on-rectangle')
-        </button>
-      </form>
+      <div class="flex items-center gap-2">
+        @include('partials/languageSwitcher')
+
+        <form class="flex items-center py-2" action="{{ route('AuthController.logout') }}" method="POST">
+          {{ csrfField() }}
+          <button type="submit" class="text-orange-400 text-2xl max-h-[24px]">
+            @svg('heroicons:arrow-right-on-rectangle')
+          </button>
+        </form>
+      </div>
     </div>
 
     @!monthSelector({ year, month, url: 'TransactionsController.index' })

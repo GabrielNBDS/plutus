@@ -5,7 +5,9 @@ import groupBy from 'App/Utils/GroupBy'
 import CreateTransactionValidator from 'App/Validators/CreateTransactionValidator'
 
 export default class TransactionsController {
-  public async index({ auth, view, request }: HttpContextContract) {
+  public async index({ auth, view, request, session }: HttpContextContract) {
+    console.log(session.all())
+
     const user = auth.user!
 
     const { month: date, page } = request.qs()

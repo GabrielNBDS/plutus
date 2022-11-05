@@ -1,0 +1,32 @@
+<div class="relative p-2 py-0 h-9 flex items-center bg-neutral-50 rounded-md text-sm" x-data="{ open: false }" @click.outside="open = false">
+  <a
+  href="#"
+  :class="{ opened: open }"
+  @click.prevent="open = !open"
+  class="flex text-inherit whitespace-nowrap items-center"
+  >
+    <span class="uppercase">
+      {{ i18n.locale }}
+    </span>
+
+    <i class="text-xl flex">
+      @svg('heroicons:chevron-down-20-solid')
+    </i>
+  </a>
+
+  <div class="absolute bg-neutral-50 left-0 w-full p-2 rounded-md mt-2 top-8" x-show="open">
+    @each(locale in getSupportedLocales())
+      @if(locale !== i18n.locale)
+        <form
+          method="POST"
+          action="{{ route('language.update', [locale]) }}"
+        >
+          {{ csrfField() }}
+          <button class="uppercase" type="submit">
+            {{ locale }}
+          </button>
+        </form>
+      @end
+    @end
+  </div>
+</div>
