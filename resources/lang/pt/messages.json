@@ -4,5 +4,10 @@
     "incomes": "Entradas",
     "outcomes": "Saídas",
     "total": "Total"
+  },
+  "nav": {
+    "list": "Listagem",
+    "register": "Cadastrar",
+    "resume": "Resumo"
   }
 }

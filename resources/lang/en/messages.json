@@ -4,5 +4,10 @@
     "incomes": "Incomes",
     "outcomes": "Outcomes",
     "total": "Total"
+  },
+  "nav": {
+    "list": "List",
+    "register": "Register",
+    "resume": "Resume"
   }
 }

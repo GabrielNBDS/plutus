@@ -2,23 +2,23 @@
   <ul class="mx-auto p-4 flex justify-between max-w-screen-lg">
     @!nav.item({
       icon: 'heroicons:list-bullet',
-      text: 'Listagem',
+      text: t("messages.nav.list"),
       href: '/dashboard',
       active: activeHref === '/dashboard'
     })
 
     @!nav.item({
       icon: 'heroicons:currency-dollar',
-      text: 'Cadastrar',
-      href: '/cadastrar',
-      active: activeHref === '/cadastrar'
+      text: t("messages.nav.register"),
+      href: '/register',
+      active: activeHref === '/register'
     })
 
     @!nav.item({
       icon: 'heroicons:chart-pie',
-      text: 'Resumo',
-      href: '/resumo',
-      active: activeHref === '/resumo'
+      text: t("messages.nav.resume"),
+      href: '/resume',
+      active: activeHref === '/resume'
     })
   </ul>
 </nav>

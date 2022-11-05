@@ -14,8 +14,8 @@ Route.get('/google/callback', 'AuthController.callback')
 Route.post('/logout', 'AuthController.logout')
 
 Route.get('/dashboard', 'TransactionsController.index').middleware('auth')
-Route.on('/cadastrar').render('pages/register').middleware('auth')
-Route.get('/resumo', 'TransactionsController.resume').middleware('auth')
+Route.on('/register').render('pages/register').middleware('auth')
+Route.get('/resume', 'TransactionsController.resume').middleware('auth')
 
 Route.group(() => {
   Route.post('/', 'TransactionsController.store')
