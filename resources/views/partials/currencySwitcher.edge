@@ -1,0 +1,30 @@
+<div class="relative p-2 py-0 h-9 flex items-center bg-neutral-50 rounded-md text-sm" x-data="{ open: false }" @click.outside="open = false">
+  <a
+  href="#"
+  :class="{ opened: open }"
+  @click.prevent="open = !open"
+  class="flex text-inherit whitespace-nowrap items-center"
+  >
+    <span class="uppercase">
+      {{ session.get('currency') || 'USD' }}
+    </span>
+
+    <i class="text-xl flex">
+      @svg('heroicons:chevron-down-20-solid')
+    </i>
+  </a>
+
+  <div class="absolute bg-neutral-50 left-0 w-full p-2 rounded-md mt-2 top-8" x-show="open">
+    @each(currency in (await loadCurrencies()).filter(currency => currency !== (session.get('currency') || 'USD')))
+      <form
+        method="POST"
+        action="{{ route('currency.update', [currency]) }}"
+      >
+        {{ csrfField() }}
+        <button class="uppercase" type="submit">
+          {{ currency }}
+        </button>
+      </form>
+    @end
+  </div>
+</div>

@@ -32,7 +32,11 @@ Route.post('language/:locale', async ({ session, response, params }) => {
     session.put('locale', params.locale)
   }
 
-  console.log(params.locale)
-
   response.redirect().back()
 }).as('language.update')
+
+Route.post('currency/:currency', async ({ session, response, params }) => {
+  session.put('currency', params.currency)
+
+  response.redirect().back()
+}).as('currency.update')

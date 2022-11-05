@@ -3,6 +3,9 @@
 </div>
 
 <script defer>
+  const locale = "{{{ session.get('locale') }}}"
+  const currency = "{{{ session.get('currency') }}}"
+
   var colors = new Array(5).fill([
     '#facc15',
     '#a3e635',
@@ -43,7 +46,7 @@
         tooltip: {
           callbacks: {
             label: function(context) {
-              return `${context.label} ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed / 100)}`;
+              return `${context.label} ${new Intl.NumberFormat(locale, { style: 'currency', currency }).format(context.parsed / 100)}`;
             }
           }
         }

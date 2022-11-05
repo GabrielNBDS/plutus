@@ -7,7 +7,7 @@
           <div class="flex justify-between">
             <div>
               <p class="text-neutral-800 text-sm">{{ transaction.name }}</p>
-              <p class="{{ transaction.type === 'income' ? 'text-green-600' : 'text-red-500' }} text-xl mb-6">{{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format((transaction.value / 100) * (transaction.type === 'income' ? 1 : -1)) }}</p>
+              <p class="{{ transaction.type === 'income' ? 'text-green-600' : 'text-red-500' }} text-xl mb-6">{{ new Intl.NumberFormat((session.get('locale') || 'en'), { style: 'currency', currency: session.get('currency') || 'USD' }).format((transaction.value / 100) * (transaction.type === 'income' ? 1 : -1)) }}</p>
             </div>
 
 

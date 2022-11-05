@@ -19,7 +19,7 @@
   @each((category, index) in grouped)
     <li style="border-left-color:{{ colors[index] }}" class="border-x-8 border-r-neutral-50 w-full bg-neutral-50 rounded-lg flex flex-col md:flex-row flex-wrap justify-between items-start md:items-center p-4">
       <p class="text-left">{{ category.category }}</p>
-      <p class="text-left font-bold">{{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(category.total / 100) }}</p>
+      <p class="text-left font-bold">{{ new Intl.NumberFormat((session.get('locale') || 'en'), { style: 'currency', currency: session.get('currency') || 'USD' }).format(category.total / 100) }}</p>
     </li>
   @endeach
 </ul>

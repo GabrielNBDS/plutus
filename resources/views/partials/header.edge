@@ -12,6 +12,7 @@
 
       <div class="flex items-center gap-2">
         @include('partials/languageSwitcher')
+        @include('partials/currencySwitcher')
 
         <form class="flex items-center py-2" action="{{ route('AuthController.logout') }}" method="POST">
           {{ csrfField() }}

@@ -16,5 +16,5 @@
     </i>
   </div>
 
-  <p class="{{ type === 'total' ? 'text-white' : 'text-neutral-800' }} text-3xl font-medium">{{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value / 100) }}</p>
+  <p class="{{ type === 'total' ? 'text-white' : 'text-neutral-800' }} text-3xl font-medium">{{ new Intl.NumberFormat((session.get('locale') || 'en'), { style: 'currency', currency: session.get('currency') || 'USD' }).format(value / 100) }}</p>
 </div>
