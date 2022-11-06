@@ -1,5 +1,5 @@
 <div class="grid grid-cols-3 gap-4 md:grid-cols-4">
   @each(category in await loadCategories())
-    @!form.radio.category({ id: category.id, label: category.name, icon: category.icon })
+    @!form.radio.category({ id: category.id, label: t(`messages.categories.${category.id}`), icon: category.icon })
   @endeach
 </div>

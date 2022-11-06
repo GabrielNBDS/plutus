@@ -1,3 +1,4 @@
+import I18n from '@ioc:Adonis/Addons/I18n'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Database from '@ioc:Adonis/Lucid/Database'
 import Transaction from 'App/Models/Transaction'
@@ -67,7 +68,7 @@ export default class TransactionsController {
     return view.render('pages/dashboard', data)
   }
 
-  public async resume({ auth, view, request }: HttpContextContract) {
+  public async resume({ auth, view, request, session }: HttpContextContract) {
     const user = auth.user!
 
     const { month: date, page } = request.qs()
@@ -111,7 +112,9 @@ export default class TransactionsController {
     const groupedObj = groupBy(transactions, 'categoryId')
     for (let key in groupedObj) {
       grouped.push({
-        category: groupedObj[key][0].category.name,
+        category: I18n.locale(session.get('locale') || 'en').formatMessage(
+          `messages.categories.${groupedObj[key][0].category.id}`
+        ),
         total: groupedObj[key].map((item) => item.value).reduce((a, b) => a + b, 0),
       })
     }

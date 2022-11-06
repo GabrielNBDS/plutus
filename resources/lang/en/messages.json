@@ -30,5 +30,27 @@
   "header": {
     "register": "Register",
     "resume": "Resume"
+  },
+  "categories": {
+    "1": "Payment",
+    "2": "Bars and restaurants",
+    "3": "Leisure",
+    "4": "Clothing",
+    "5": "Health",
+    "6": "Personal care",
+    "7": "Market",
+    "8": "Electronics",
+    "9": "Transport",
+    "10": "Housing",
+    "11": "Education",
+    "12": "Gifts",
+    "13": "Work expanses",
+    "14": "Subscriptions and services",
+    "15": "Phones",
+    "16": "Sports",
+    "17": "Traveling",
+    "18": "Family",
+    "19": "Pets",
+    "20": "Others"
   }
 }

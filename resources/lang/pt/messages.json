@@ -30,5 +30,27 @@
   "header": {
     "register": "Cadastrar",
     "resume": "Resumo"
+  },
+  "categories": {
+    "1": "Pagamento",
+    "2": "Bares e restaurantes",
+    "3": "Lazer",
+    "4": "Vestuário",
+    "5": "Saúde",
+    "6": "Cuidados pessoais",
+    "7": "Mercado",
+    "8": "Eletrônicos",
+    "9": "Transporte",
+    "10": "Moradia",
+    "11": "Educação",
+    "12": "Presentes",
+    "13": "Despesas de trabalho",
+    "14": "Assinaturas e serviços",
+    "15": "Telefones",
+    "16": "Esportes",
+    "17": "Viagens",
+    "18": "Família",
+    "19": "Animais de estimação",
+    "20": "Outros"
   }
 }

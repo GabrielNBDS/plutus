@@ -46,7 +46,7 @@
                 @svg(transaction.category.icon)
               </i>
 
-              <p class="text-sm">{{ transaction.category.name }}</p>
+              <p class="text-sm">{{ t(`messages.categories.${transaction.category.id}`) }}</p>
             </div>
 
             <p class="text-sm">{{ `${transaction.day}/${transaction.month}/${transaction.year}` }}</p>
