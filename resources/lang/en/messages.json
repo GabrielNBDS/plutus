@@ -52,5 +52,10 @@
     "18": "Family",
     "19": "Pets",
     "20": "Others"
+  },
+  "toast": {
+    "transactionRegistered": "Transaction registered!",
+    "error": "An error occurred. Please try again.",
+    "transactionRemoved": "Transaction removed!"
   }
 }

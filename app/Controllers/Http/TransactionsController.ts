@@ -172,13 +172,25 @@ export default class TransactionsController {
 
       await trx.commit()
 
-      session.flash('toast', [{ type: 'success', message: 'Transação cadastrada!' }])
+      session.flash('toast', [
+        {
+          type: 'success',
+          message: I18n.locale(session.get('locale') || 'en').formatMessage(
+            'messages.toast.transactionRegistered'
+          ),
+        },
+      ])
 
       return response.redirect('/dashboard')
     } catch (error) {
       console.log(error)
 
-      session.flash('toast', [{ type: 'error', message: 'Ocorreu um erro, tente novamente.' }])
+      session.flash('toast', [
+        {
+          type: 'error',
+          message: I18n.locale(session.get('locale') || 'en').formatMessage('messages.toast.error'),
+        },
+      ])
 
       return response.redirect().back()
     }
@@ -211,11 +223,23 @@ export default class TransactionsController {
     try {
       await trx.commit()
 
-      session.flash('toast', [{ type: 'success', message: 'Transação removida!' }])
+      session.flash('toast', [
+        {
+          type: 'error',
+          message: I18n.locale(session.get('locale') || 'en').formatMessage(
+            'messages.toast.transactionRemoved'
+          ),
+        },
+      ])
     } catch (error) {
       console.log(error)
 
-      session.flash('toast', [{ type: 'error', message: 'Ocorreu um erro, tente novamente.' }])
+      session.flash('toast', [
+        {
+          type: 'error',
+          message: I18n.locale(session.get('locale') || 'en').formatMessage('messages.toast.error'),
+        },
+      ])
     } finally {
       response.redirect().withQs().back()
     }

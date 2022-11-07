@@ -52,5 +52,10 @@
     "18": "Família",
     "19": "Animais de estimação",
     "20": "Outros"
+  },
+  "toast": {
+    "transactionRegistered": "Transação registrada!",
+    "error": "Ocorreu um erro. Tente novamente.",
+    "transactionRemoved": "Transação removida!"
   }
 }
