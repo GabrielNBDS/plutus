@@ -62,5 +62,9 @@
     "heading": "Sem transações",
     "subtitle": "Suas transações aparecerão aqui",
     "callToAction": "Criar transação"
+  },
+  "titles": {
+    "register": "Cadastrar transação",
+    "resume": "Resumo"
   }
 }

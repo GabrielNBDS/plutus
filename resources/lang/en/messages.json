@@ -62,5 +62,9 @@
     "heading": "No transactions",
     "subtitle": "Your transactions will be here",
     "callToAction": "Create transaction"
+  },
+  "titles": {
+    "register": "Register transaction",
+    "resume": "Resume"
   }
 }
