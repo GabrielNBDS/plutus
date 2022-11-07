@@ -57,5 +57,10 @@
     "transactionRegistered": "Transaction registered!",
     "error": "An error occurred. Please try again.",
     "transactionRemoved": "Transaction removed!"
+  },
+  "emptyState": {
+    "heading": "No transactions",
+    "subtitle": "Your transactions will be here",
+    "callToAction": "Create transaction"
   }
 }

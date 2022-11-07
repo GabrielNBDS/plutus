@@ -57,5 +57,10 @@
     "transactionRegistered": "Transação registrada!",
     "error": "Ocorreu um erro. Tente novamente.",
     "transactionRemoved": "Transação removida!"
+  },
+  "emptyState": {
+    "heading": "Sem transações",
+    "subtitle": "Suas transações aparecerão aqui",
+    "callToAction": "Criar transação"
   }
 }

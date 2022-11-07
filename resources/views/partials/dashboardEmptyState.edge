@@ -1,14 +1,14 @@
 <div class="relative text-white p-8 py-6 text-center">
-  <h2 class="text-2xl font-medium">Sem transações</h2>
+  <h2 class="text-2xl font-medium">{{ t('messages.emptyState.heading') }}</h2>
 
   <p class="text-sm">
-    Suas transações aparecerão aqui
+    {{ t('messages.emptyState.subtitle') }}
   </p>
 
   <a
-    href="{{ route('/cadastrar') }}"
+    href="{{ route('/register') }}"
     class="btn mt-12"
   >
-    Criar transação
+  {{ t('messages.emptyState.callToAction') }}
   </a>
 </div>
