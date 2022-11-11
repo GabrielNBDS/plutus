@@ -54,12 +54,12 @@
     "20": "Lain-lain"
   },
   "toast": {
-    "transactionRegistered": "Transaksi ditambahkan!",
+    "transactionRegistered": "Transaksi berhasil ditambahkan!",
     "error": "Terjadi kesalahan. Silakan coba lagi.",
-    "transactionRemoved": "Transaksi dihapus!"
+    "transactionRemoved": "Transaksi berhasil dihapus!"
   },
   "emptyState": {
-    "heading": "Belum ada transaksi",
+    "heading": "Tidak ada transaksi",
     "subtitle": "Transaksi kamu akan tampil di sini",
     "callToAction": "Tambah Transaksi"
   },
@@ -72,5 +72,6 @@
     "title": "Kendalikan keuangan kamu dengan sederhana",
     "loginText": "Masuk dengan salah satu dari berikut",
     "googleButton": "Masuk dengan Google"
-  }
+  },
+  "difference": "Selisih"
 }
