@@ -1,0 +1,75 @@
+{
+  "greeting": "Halo,",
+  "totalCards": {
+    "incomes": "Pemasukan",
+    "outcomes": "Pengeluaran",
+    "total": "Saldo"
+  },
+  "nav": {
+    "list": "Transaksi",
+    "register": "Tambah",
+    "resume": "Ringkasan"
+  },
+  "lastTransactions": "Transaksi terakhir",
+  "deleteModal": {
+    "heading": "Kamu yakin ingin menghapus &#34;{ transactionName }&#34;?",
+    "warning": "Tindakan ini tidak bisa dibatalkan.",
+    "confirm": "Ya saya yakin",
+    "cancel": "Batal"
+  },
+  "registerLabels": {
+    "name": "Judul",
+    "value": "Nominal",
+    "date": "Tanggal",
+    "type": "Tipe",
+    "income": "Pemasukan",
+    "outcome": "Pengeluaran",
+    "category": "Kategori",
+    "register": "Tambah"
+  },
+  "header": {
+    "register": "Tambah",
+    "resume": "Ringkasan"
+  },
+  "categories": {
+    "1": "Pembayaran",
+    "2": "Bar dan Restoran",
+    "3": "Waktu Luang",
+    "4": "Pakaian",
+    "5": "Kesehatan",
+    "6": "Perawatan Pribadi",
+    "7": "Pasar",
+    "8": "Elektronik",
+    "9": "Transportasi",
+    "10": "Perumahan",
+    "11": "Pendidikan",
+    "12": "Hadiah",
+    "13": "Gaji",
+    "14": "Langganan dan Layanan",
+    "15": "Gawai",
+    "16": "Olahraga",
+    "17": "Liburan",
+    "18": "Keluarga",
+    "19": "Hewan Peliharaan",
+    "20": "Lain-lain"
+  },
+  "toast": {
+    "transactionRegistered": "Transaksi ditambahkan!",
+    "error": "Terjadi kesalahan. Silakan coba lagi.",
+    "transactionRemoved": "Transaksi dihapus!"
+  },
+  "emptyState": {
+    "heading": "Belum ada transaksi",
+    "subtitle": "Transaksi kamu akan tampil di sini",
+    "callToAction": "Tambah Transaksi"
+  },
+  "titles": {
+    "register": "Transaksi Baru",
+    "resume": "Ringkasan"
+  },
+  "home": {
+    "title": "Kendalikan keuangan kamu dengan sederhana",
+    "loginText": "Masuk dengan salah satu dari berikut",
+    "googleButton": "Masuk dengan Google"
+  }
+}
