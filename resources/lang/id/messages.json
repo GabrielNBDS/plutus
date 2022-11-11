@@ -65,7 +65,8 @@
   },
   "titles": {
     "register": "Transaksi Baru",
-    "resume": "Ringkasan"
+    "resume": "Ringkasan",
+    "dashboard": "Dasbor"
   },
   "home": {
     "title": "Kendalikan keuangan kamu dengan sederhana",

@@ -65,7 +65,8 @@
   },
   "titles": {
     "register": "Register transaction",
-    "resume": "Resume"
+    "resume": "Resume",
+    "dashboard": "Dashboard"
   },
   "home": {
     "title": "Control your finances the simple way",
