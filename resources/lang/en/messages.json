@@ -65,11 +65,13 @@
   },
   "titles": {
     "register": "Register transaction",
-    "resume": "Resume"
+    "resume": "Resume",
+    "dashboard": "Dashboard"
   },
   "home": {
     "title": "Control your finances the simple way",
     "loginText": "Login with one of the following",
     "googleButton": "Login with Google"
-  }
+  },
+  "difference": "Difference"
 }

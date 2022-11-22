@@ -2,6 +2,7 @@
 @set('iconColor', type === 'income' ? 'text-green-600' : 'text-red-600')
 @set('bgColor', type === 'income' ? 'peer-checked:bg-green-200' : 'peer-checked:bg-red-200')
 @set('borderColor', type === 'income' ? 'peer-checked:border-green-200' : 'peer-checked:border-red-200')
+@set('icon', type === 'income' ? 'heroicons:arrow-up-circle' : 'heroicons:arrow-down-circle')
 
 <div class="flex w-full">
   <input
@@ -16,7 +17,7 @@
   />
   <label for="{{ type }}" class="flex items-center justify-center gap-2 w-full px-4 py-3 md:py-4 border-2 border-neutral-300 rounded-lg cursor-pointer {{ borderColor }} {{ bgColor }}">
     <i class="{{ iconColor }} text-2xl">
-      @svg('heroicons:arrow-up-circle')
+      @svg(icon)
     </i>
 
     <p class="text-sm">

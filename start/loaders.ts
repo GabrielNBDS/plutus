@@ -6,5 +6,5 @@ View.global('loadCategories', async function () {
 })
 
 View.global('loadCurrencies', async function () {
-  return ['USD', 'EUR', 'BRL']
+  return ['USD', 'EUR', 'BRL', 'IDR']
 })

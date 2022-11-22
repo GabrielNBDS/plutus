@@ -49,7 +49,7 @@ const i18nConfig: I18nConfig = {
   | inside the `resources/lang` directory.
   |
   */
-  supportedLocales: ['en', 'pt'],
+  supportedLocales: ['en', 'pt', 'id'],
 
   /*
   |--------------------------------------------------------------------------

@@ -65,11 +65,13 @@
   },
   "titles": {
     "register": "Cadastrar transação",
-    "resume": "Resumo"
+    "resume": "Resumo",
+    "dashboard": "Painel"
   },
   "home": {
     "title": "Controle suas finanças de forma muito simples",
     "loginText": "Faça seu login com uma das contas abaixo",
     "googleButton": "Entrar com Google"
-  }
+  },
+  "difference": "Diferença"
 }
